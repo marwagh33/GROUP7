@@ -2,7 +2,7 @@ import lang.stride.*;
 
 /**
  * Write a description of class product_inventory here.
- * @author (your name) @version (a version number or a date)
+ * @author (Group 7) @version (6-2-2026)
  */
 public class product_inventory
 {
