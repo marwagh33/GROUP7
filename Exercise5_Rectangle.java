@@ -59,6 +59,7 @@ public class Exercise5_Rectangle {
         this.color = color;
         this.isFilled = isFilled;
     }
+    //getter 
     public double getLength() {
         return length;
     }
@@ -74,6 +75,8 @@ public class Exercise5_Rectangle {
     public boolean isFilled() {
         return isFilled;
     }
+
+    //setter for length
      public void setLength(double length) {
         if (length > 0) {
             this.length = length;
@@ -81,7 +84,7 @@ public class Exercise5_Rectangle {
             System.out.println("Length must be greater than 0");
         }
     }
-
+//setter for width 
     public void setWidth(double width) {
         if (width > 0) {
             this.width = width;
@@ -89,21 +92,23 @@ public class Exercise5_Rectangle {
             System.out.println("Width must be greater than 0");
         }
     }
+    //calulate and return area
     public double calculateArea() {
         return length * width;
     }
-
+  //calulate and return parameter
     public double calculatePerimeter() {
         return 2 * (length + width);
     }
-
+//calulate and return diagonal 
     public double calculateDiagonal() {
         return Math.sqrt(Math.pow(length, 2) + Math.pow(width, 2));
     }
-
+//calulate and return square
     public boolean isSquare() {
         return length == width;
     }
+    //calulate and return resize 
     public void resize(double factor) {
         if (factor > 0) {
             length *= factor;
@@ -112,6 +117,7 @@ public class Exercise5_Rectangle {
             System.out.println("Resize factor must be greater than 0");
         }
     }
+    //comparison between area1 and area2
 
     public String compare(Exercise5_Rectangle other) {
         double area1 = this.calculateArea();
@@ -125,6 +131,7 @@ public class Exercise5_Rectangle {
             return "equal";
         }
     }
+    //display geometry exercise 
 
     public static void main(String[] args) {
         System.out.println("=== Rectangle Geometry Exercise ===\n");
