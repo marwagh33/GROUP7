@@ -12,7 +12,7 @@ class Vehicle {
         this.Price = Price;
         System.out.println("Vehicle constructor called");
     }
-
+   // Displays  vehicle information
     public void displayInfo() {
         System.out.println("Brand: " + Brand);
         System.out.println("Model: " + Model);
@@ -28,7 +28,7 @@ class Vehicle {
         System.out.println(Brand + " " + Model + " engine stopped");
     }
 }
-
+// Car class inherits from Vehicle
 class Car extends Vehicle {
     private int numDoors;
     private String fuelType;
@@ -48,7 +48,7 @@ class Car extends Vehicle {
         System.out.println("Opening trunk of " + Brand + " " + Model);
     }
 }
-
+// Motorcycle class inherits from Vehicle
 class Motorcycle extends Vehicle {
     private int EngineCC;
     private boolean hasHelmetStorage;
@@ -69,7 +69,7 @@ class Motorcycle extends Vehicle {
         System.out.println("Kick starting " + Brand + " " + Model);
     }
 }
-
+// ElectricCar class inherits from Car
 class ElectricCar extends Car {
     private double batteryCapacity;
     private int range;
@@ -87,42 +87,42 @@ class ElectricCar extends Car {
     public void startEngine() {
         System.out.println(Brand + " " + Model + " electric motor activated silently");
     }
-
+ // Charges electric car battery
     public void charge() {
         System.out.println("Charging " + Brand + " " + Model +
                 "... Battery: " + batteryCapacity + " kWh");
     }
-
+ // Displays battery status 
     public void displayBatteryStatus() {
         System.out.println("Battery Capacity: " + batteryCapacity + " kWh");
         System.out.println("Range: " + range + " km");
     }
 }
-
+// Main class
 public class Exercise12_Inheritance {
     public static void main(String[] args) {
 
         System.out.println("=== VEHICLE HIERARCHY TEST ===\n");
-
+// Creating objects
         Car car = new Car("Toyota", "Corolla", 2023, 45000000, 4, "Petrol");
         Motorcycle motorcycle = new Motorcycle("Honda", "CBR500R", 2022, 15000000, 500, false);
         ElectricCar electricCar = new ElectricCar(
                 "Tesla", "Model 3", 2024, 85000000, 4, "Electric", 75.0, 450);
-
+ // Testing Car methods
         System.out.println("\n--- Testing Car ---");
         car.displayInfo();
         car.startEngine();
         car.honk();
         car.openTrunk();
         car.stopEngine();
-
+ // Testing Motorcycle methods
         System.out.println("\n--- Testing Motorcycle ---");
         motorcycle.displayInfo();
         motorcycle.startEngine();
         motorcycle.wheelie();
         motorcycle.kickStart();
         motorcycle.stopEngine();
-
+ // Testing Electric Car methods
         System.out.println("\n--- Testing Electric Car ---");
         electricCar.displayInfo();
         electricCar.startEngine();
