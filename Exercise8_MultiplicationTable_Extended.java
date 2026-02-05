@@ -7,7 +7,7 @@ public class Exercise8_MultiplicationTable_Extended {
 
         System.out.println("=== Multiplication Table Generator ===");
 
-        // Option menu
+        // Option menu for user to choose
         System.out.println("\nChoose an option:");
         System.out.println("1. Single number table");
         System.out.println("2. Table with start and end range");
@@ -15,9 +15,9 @@ public class Exercise8_MultiplicationTable_Extended {
         System.out.print("Enter your choice: ");
 
         int choice = scanner.nextInt();
-
+//choice for user after he choose
         switch (choice) {
-
+//dsplay the number that user write and multiply by 1-12
  
             case 1:
                 System.out.print("Enter a number: ");
@@ -27,7 +27,7 @@ public class Exercise8_MultiplicationTable_Extended {
                     System.out.println(number + " x " + i + " = " + (number * i));
                 }
                 break;
-
+// display the multiplication of start range and end range and create full multiplication table (1-10 x 1-10) using nested loops
 
             case 2:
                 System.out.print("Enter your number: ");
@@ -43,7 +43,7 @@ public class Exercise8_MultiplicationTable_Extended {
                     System.out.println(num + " x " + i + " = " + (num * i));
                 }
                 break;
-
+// show full multiplication of table for multiple numbers 
 
             case 3:
                 System.out.println("\nFull Multiplication Table (1–10)\n");
@@ -56,7 +56,7 @@ public class Exercise8_MultiplicationTable_Extended {
                 }
 
                 break;
-
+// the user write any numbers except 1 2 and 3
             default:
                 System.out.println("Invalid choice ");
         }
