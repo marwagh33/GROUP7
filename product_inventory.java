@@ -6,6 +6,7 @@ import lang.stride.*;
  */
 public class product_inventory
 {
+    // TODO: Add private attributes here
     private String productCode;
     private String productName;
     private String category;
@@ -13,6 +14,7 @@ public class product_inventory
     private int quantityInStock;
     private int reorderLevel;
 
+    // TODO: Add default constructor
     /**
      * 
      */
@@ -20,6 +22,9 @@ public class product_inventory
     {
         this.reorderLevel = 10;
     }
+
+    
+    // TODO: Add parameterized constructor
 
     /**
      * 
@@ -37,6 +42,8 @@ public class product_inventory
     /**
      * 
      */
+    // TODO: Add getters
+
     public String getProductCode()
     {
         return productCode;
@@ -85,6 +92,9 @@ public class product_inventory
     /**
      * 
      */
+
+    // TODO: Add setters with validation
+
     public void setUnitPrice(double unitPrice)
     {
         if (unitPrice > 0) {
@@ -111,6 +121,8 @@ public class product_inventory
     /**
      * 
      */
+
+    // TODO: Add addStock() method
     public void setReorderLevel(int reorderLevel)
     {
         if (reorderLevel > 0) {
@@ -134,6 +146,7 @@ public class product_inventory
     /**
      * 
      */
+    // TODO: Add sellProduct() method
     public boolean sellProduct(int quantity)
     {
         if (quantity > 0 && quantity <= quantityInStock) {
@@ -146,6 +159,8 @@ public class product_inventory
     /**
      * 
      */
+    // TODO: Add calculateStockValue() method
+
     public double calculateStockValue()
     {
         return unitPrice * quantityInStock;
@@ -154,6 +169,7 @@ public class product_inventory
     /**
      * 
      */
+    // TODO: Add needsReorder() method
     public boolean needsReorder()
     {
         return quantityInStock <= reorderLevel;
@@ -162,6 +178,7 @@ public class product_inventory
     /**
      * 
      */
+    // TODO: Add applyDiscount() method
     public void applyDiscount(double percentage)
     {
         if (percentage > 0 && percentage < 100) {
@@ -172,6 +189,7 @@ public class product_inventory
     /**
      * 
      */
+    // TODO: Add displayProductInfo() method
     public void displayProductInfo()
     {
         System.out.println("Product code: " + productCode);
@@ -183,6 +201,11 @@ public class product_inventory
         System.out.println("Stock value: " + calculateStockValue());
         System.out.println("Needs reorder: " + needsReorder());
     }
+
+    // TODO: Create product1 - "PRD001", "Laptop", "Electronics", 1500000, 25
+    // TODO: Create product2 - "PRD002", "Office Chair", "Furniture", 350000, 8
+    // TODO: Create product3 - "PRD003", "Notebook", "Stationery", 5000, 100
+
     public static void main(String[] args)
     {
         product_inventory p1 =
@@ -193,13 +216,19 @@ public class product_inventory
 
         product_inventory p3 =
             new product_inventory("PRD003", "Notebook", "Stationery", 5000, 100);
+
+        // TODO: Display all products info
         p1.displayProductInfo();
         p2.displayProductInfo();
         p3.displayProductInfo();
+
+        // TODO: Sell 20 laptops
         p1.sellProduct(20);
+         // TODO: Add 50 units to product2 stock
         p2.addStock(50);
+        // TODO: Apply 15% discount to product3
         p3.applyDiscount(15);
-        // Check reorder
+        // TODO: Check if product2 needs reorder
         if (p2.needsReorder()) {
             System.out.println("Product 2 needs reorder!");
         }
