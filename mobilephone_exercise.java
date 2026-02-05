@@ -10,7 +10,7 @@ class mobilephone_exercise
     private String brand;
     private String model;
     private double price;
-    private int batteryLevel;//0-100
+    private int batteryLevel;// Battery level 0-100
     private boolean isOn;
     public mobilephone_exercise() {
         this.brand="unknown";
@@ -19,6 +19,7 @@ class mobilephone_exercise
         this.batteryLevel=100;
         this.isOn=false;
     }
+    //parameter constructor
     public mobilephone_exercise(String brand, String model, double price)
     {
         this.brand = brand;
@@ -27,6 +28,8 @@ class mobilephone_exercise
         this.batteryLevel = 100;
         this.isOn = false;
     }
+
+    //getter method 
     public String getbrand() {
         return brand;
     }
@@ -42,7 +45,7 @@ class mobilephone_exercise
     public boolean getisOn() {
         return isOn;
     }
-//setters with validation
+//setters for price
 public void setprice ( double price) {
    if (price > 0) {
        this.price = price;
@@ -50,6 +53,7 @@ public void setprice ( double price) {
        System.out.println("Price must be positive.");
    }
 }
+    //setter for battery level 
 public void setbatteryLevel(int batteryLevel) {
     if (batteryLevel >= 0 && batteryLevel <= 100) {
         this.batteryLevel = batteryLevel;
@@ -57,6 +61,7 @@ public void setbatteryLevel(int batteryLevel) {
         System.out.println("Battery level must be between 0 and 100.");
     }
 }
+    //turn the phone on if the phone battery level is greater than 0
 public void turnOn() {
     if (batteryLevel > 0) {
         isOn = true;
@@ -65,6 +70,7 @@ public void turnOn() {
         System.out.println("Battery empty. Cannot turn on.");
     }
 }
+    //turn the phone off if the phone battery level is 0
 public void turnOff() {
     if (batteryLevel < 0) {
         isOn = false;
@@ -73,11 +79,13 @@ public void turnOff() {
         System.out.println("Phone now is on.");
     }
 }
+    //Making calls
 public void makeCall(String contactName) {
     if (isOn && batteryLevel >=5) {
         System.out.println("Calling" + contactName + "....");
     }
 }
+    //charge battery every 2minutes
 public void chargeBattery(int minutes) {
         int addedCharge = minutes * 2;
         batteryLevel += addedCharge;
@@ -86,6 +94,7 @@ public void chargeBattery(int minutes) {
         }
         System.out.println("Phone charged for " + minutes + " minutes.");
 }
+    //display all phone information
 public void displayInfo() {
         System.out.println("Brand: " + brand);
         System.out.println("Model: " + model);
@@ -93,6 +102,7 @@ public void displayInfo() {
         System.out.println("Battery Level: " + batteryLevel + "%");
         System.out.println("Power Status: " + (isOn ? "ON" : "OFF"));
 }
+    //Phone exercise
 public static void main(String[] args) {
         System.out.println("=== Mobile Phone Exercise ===\n");
         mobilephone_exercise phone1 = new mobilephone_exercise();
