@@ -2,7 +2,7 @@
 /**
  * Write a description of class mobilephone_exercise here.
  *
- * @author Aiman
+ * @author GROUP 7
  * @version-1 22-01-2026
  */
 class mobilephone_exercise
