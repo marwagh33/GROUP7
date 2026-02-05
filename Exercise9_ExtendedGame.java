@@ -28,17 +28,19 @@ public class Exercise9_ExtendedGame {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         char playAgain;
-
+          //Maximum number and attempts
         do {
             int maxNumber = 100;
             int maxAttempts = 10;
 
-            // Difficulty menu
+            // Difficulty levels
             System.out.println("Choose Difficulty Level:");
             System.out.println("1. Easy (1 - 50)");
             System.out.println("2. Medium (1 - 100)");
             System.out.println("3. Hard (1 - 1000)");
             System.out.print("Enter your choice: ");
+
+            //choosing the levels
 
             int choice = scanner.nextInt();
 
@@ -49,6 +51,7 @@ public class Exercise9_ExtendedGame {
             } else if (choice == 3) {
                 maxNumber = 1000;
             }
+            
 
             int secretNumber = random.nextInt(maxNumber) + 1;
             int guess = 0;
@@ -58,7 +61,7 @@ public class Exercise9_ExtendedGame {
             System.out.println("\nGuess a number between 1 and " + maxNumber);
             System.out.println("You have " + maxAttempts + " attempts.\n");
 
-            // Guessing loop with attempt limit
+            // Guessing the number with attempt limit
             while (guess != secretNumber && attempts < maxAttempts) {
                 System.out.print("Enter your guess: ");
                 guess = scanner.nextInt();
@@ -71,13 +74,14 @@ public class Exercise9_ExtendedGame {
                 }
             }
 
-            // Result
+            // Result for guess
             if (guess == secretNumber) {
                 System.out.println("🎉 You guessed it in " + attempts + " attempts!");
             } else {
                 System.out.println("❌ Game Over!");
                 System.out.println("The correct number was: " + secretNumber);
             }
+            //Rating Attempts
             
             if (attempts <= 5) { 
             System.out.println("Rating: Excellent! You're a mind reader!"); 
@@ -85,7 +89,7 @@ public class Exercise9_ExtendedGame {
             }else { System.out.println("Rating: You got it eventually!");
             }
 
-            // Play again
+            // Allow users to Play again
             System.out.print("\nPlay again?: ");
             playAgain = scanner.next().charAt(0);
 
